@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <!-- <link rel="stylesheet" href="24_taskmanagerproject.css"> -->
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="internal-container">
+            <input type="text" id="To-Do" placeholder="Enter To-Do list...">
+            <button id="addtaskbtn">Add task</button>
+        </div>
+        <ul id="todolist">
+            
+        </ul>
+        
+    </div>
+    <script >
+        const todoinput = document.getElementById("To-Do");
+const addtaskbtn = document.getElementById("addtaskbtn");
+const todo = document.getElementById("todolist");
+
+let task = [];
+
+addtaskbtn.addEventListener("click", () => {
+    const tasktext = todoinput.value.trim();
+    if (tasktext === "") return; // Fix typo in variable name
+
+    const newtask = {
+        id: Date.now(), // Fix typo in method name
+        text: tasktext,
+        completed: false,
+    };
+
+    task.push(newtask);
+    todoinput.value = ""; // Fix clearing the input field
+    console.log(task);
+});
+
+    </script>
+
+</body> 
+</html>

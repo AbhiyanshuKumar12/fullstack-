@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Box</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.upload-container {
+    text-align: center;
+}
+
+.upload-box {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #0078d4;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.upload-box:hover {
+    background-color: #f0f8ff;
+}
+
+.upload-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #0078d4;
+}
+
+.upload-box p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+}
+
+</style>
+<script>
+    document.getElementById('fileInput').addEventListener('change', (event) => {
+    const fileName = event.target.files[0]?.name || "No file selected";
+    alert(`Selected file: ${fileName}`);
+});
+
+</script>
+<body>
+    <div class="upload-container">
+        <input type="file" id="fileInput" hidden>
+        <label for="fileInput" class="upload-box">
+            <div class="upload-icon">📤</div>
+            <p>Click here to upload a file</p>
+        </label>
+    </div>
+    <!-- <script src="script.js"></script> -->
+</body>
+</html>
